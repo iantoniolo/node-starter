@@ -8,20 +8,35 @@
     <title>Tela de Login</title>
 </head>
 <body>
+
     <h1>Faça seu login</h1>
-    <div>
+    <form>
+
         <label for="username">Usuário:</label> 
-        <br>
-        <input type="text" id="username" name="username">
-    </div>
+        <input type="text" placeholder="username" id="username">
+
+        <label for="pass">Senha:</label>    
+        <input type="password" placeholder="password" id="password">
+
+        <input class="btn btn-primary" type="submit" onclick="logar(); return false">
+
+    </form>
+
+    <script>
+
+        function logar(){
     
-    <div>
-        <br>
-        <label for="pass">Senha (Mínimo de 8 caracteres):</label>
-        <br>
-        <input type="password" id="pass" name="password" minlength="8" required>
-    </div>
-    <br>
-    <input class="btn btn-primary" type="submit" value="Entrar">
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+
+        if(username == "ian" && password == "1234"){
+            alert('Sucesso')
+            window.location.href = "./home";
+        }else{
+            alert('Usuário ou senha incorretos');
+        }}
+
+    </script>
+    
 </body>
 </html>
